@@ -84,7 +84,12 @@ int foodCanEat(){
 	return 0;
 }
 void eatFood(){
-	sfront++; snk_x[sfront]=fx; snk_y[sfront]=fy;
+	if (snk_x[sfront]==fx && snk_y[sfront]==fy){
+		sfront++; snk_x[sfront]=fx; snk_y[sfront]=fy;
+	} 
+	if (snk_x[sfront]==lx && snk_y[sfront]==ly){
+		sfront+=2; snk_x[sfront]=lx; snk_y[sfront]=ly;
+	}
 }
 int meetWall(){
 	int hx=snk_x[sfront],hy=snk_y[sfront];
@@ -110,7 +115,7 @@ void init_set(){
 	creatFood();
 }
 int main(){
-	cout<<"小周周力献  贪吃蛇 V1.1.1 PC版 \n";
+	cout<<"小周周力献  贪吃蛇 V1.1.2 PC版 \n";
 	cout<<"方向键或“ASDW”“asdw”操作\n";
 	cout<<"请按任意键开始!\n"; 
 	system("pause");
@@ -122,6 +127,7 @@ int main(){
 	drawSnake();
 	dropFood();
 	bool flag=0; 
+	LL flagg=0; 
 	while(1){
 		if(meetWall()==1) {
 			flag=1;
@@ -138,13 +144,17 @@ int main(){
 		if(foodCanEat()!=0) {
 			if (foodCanEat()==1){
 				eatFood();
-				dropFood();
+				flagg++;
 				ans++;	
 			}else{
 				eatFood();
-				dropFood();
+				flagg++;
 				ans+=2;
 			}
+		}
+		if (flagg==2){
+			dropFood();
+			flagg=0;
 		}	
 	} 
 	if (flag){
