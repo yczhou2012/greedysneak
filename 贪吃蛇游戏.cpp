@@ -115,7 +115,7 @@ void init_set(){
 	creatFood();
 }
 int main(){
-	cout<<"小周周力献  贪吃蛇 V1.1.2 PC版 \n";
+	cout<<"小周周力献  贪吃蛇 V1.1.3 PC版 \n";
 	cout<<"方向键或“ASDW”“asdw”操作\n";
 	cout<<"请按任意键开始!\n"; 
 	system("pause");
