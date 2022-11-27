@@ -129,6 +129,10 @@ int main(){
 	bool flag=0; 
 	LL flagg=0; 
 	while(1){
+		if (ans>=10000){
+			cerr<<"发生了未知错误\n";
+			cerr<<"按任意键重启\n";
+		} 
 		if(meetWall()==1) {
 			flag=1;
 			break;
