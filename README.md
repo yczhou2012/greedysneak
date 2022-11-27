@@ -6,3 +6,5 @@ the game about greedy sneak
 the initial version about greedy sheak.
 ## V.1.1.2
 fixed some bugs
+## V.1.1.3
+fixed some bugs
